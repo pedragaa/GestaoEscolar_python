@@ -1,8 +1,7 @@
 import getpass
 
-# Lista de usuários e cursos já cadastrados
+# Listas de dados
 usuarios = []
-
 cursos = [
     {
         "nome": "Lei Geral de Proteção de Dados (LGPD)",
@@ -15,6 +14,7 @@ cursos = [
         "carga": "18 horas"
     }
 ]
+modulos = []  # <- Lista de módulos cadastrados
 
 def fazer_cadastro():
     print("\n---- Tela de Cadastro ----")
@@ -83,7 +83,17 @@ def cadastrar_cursos():
 def cadastrar_modulo():
     print("\n---- Cadastro de Módulo ----")
     modulo = input("Digite o nome do módulo: ")
+    modulos.append(modulo)
     print(f"Módulo '{modulo}' cadastrado com sucesso!\n")
+
+def modulos_disponiveis():
+    print("\n---- Módulos Cadastrados ----")
+    if not modulos:
+        print("Nenhum módulo cadastrado ainda.\n")
+    else:
+        for idx, modulo in enumerate(modulos, start=1):
+            print(f"{idx} - {modulo}")
+    input("\nPressione Enter para voltar ao menu principal...")
 
 def mais_informacoes():
     print("\n---- Mais Informações ----")
@@ -106,6 +116,7 @@ def mais_informacoes():
     print("- Mantenha seu dispositivo atualizado e com antivírus ativo.\n")
 
     input("Pressione Enter para voltar ao menu principal...")
+
 def sair():
     print("\nSaindo do sistema... Até logo!")
     exit()
@@ -119,9 +130,10 @@ while True:
     print("2 - Fazer login")
     print("3 - Cadastrar cursos")
     print("4 - Cadastrar módulo de cursos")
-    print("5 - Mais informações")
-    print("6 - Ver cursos disponíveis")
-    print("7 - Sair")
+    print("5 - Ver módulos cadastrados")
+    print("6 - Mais informações")
+    print("7 - Ver cursos disponíveis")
+    print("8 - Sair")
     print("*" * 80)
 
     escolha = input("Escolha uma opção: ")
@@ -135,10 +147,12 @@ while True:
     elif escolha == "4":
         cadastrar_modulo()
     elif escolha == "5":
-        mais_informacoes()
+        modulos_disponiveis()
     elif escolha == "6":
-        cursos_disponiveis()
+        mais_informacoes()
     elif escolha == "7":
+        cursos_disponiveis()
+    elif escolha == "8":
         sair()
     else:
         print("\nOpção inválida! Tente novamente.\n")
