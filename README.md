@@ -66,11 +66,11 @@ Reforçando o compromisso com o bem-estar digital e o ensino consciente desde a 
 🚪 5. Encerramento e Navegação
 O sistema é interativo por menus, com opções claras e numeradas, oferecendo:
 
-Facilidade de uso
+- Facilidade de uso
 
-Boas práticas de navegação
+- Boas práticas de navegação
 
-Opção de sair do sistema com segurança
+- Opção de sair do sistema com segurança
 
 🔄 Estrutura Modular e Expansível
 A aplicação é modular e permite expansão:
