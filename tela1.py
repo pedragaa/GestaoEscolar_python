@@ -89,6 +89,23 @@ def mais_informacoes():
     print("\n---- Mais Informações ----")
     print("Essa plataforma foi criada para a educação infantil segura.\n")
 
+    print("---- Informações de Segurança ----")
+    print("🔒 Segurança de Dados:")
+    print("- Seus dados pessoais são armazenados com segurança e utilizados apenas para fins educacionais.")
+    print("- Evite compartilhar sua senha com outras pessoas.\n")
+
+    print("📜 LGPD (Lei Geral de Proteção de Dados):")
+    print("- Garantimos seus direitos como titular de dados.")
+    print("- Você pode solicitar a exclusão ou alteração de suas informações a qualquer momento.")
+    print("- Tratamos seus dados de forma transparente e segura.\n")
+
+    print("💡 Boas Práticas de Segurança:")
+    print("- Use senhas fortes e únicas para seu cadastro.")
+    print("- Sempre faça logout após utilizar a plataforma em dispositivos compartilhados.")
+    print("- Desconfie de links ou mensagens suspeitas que peçam seus dados pessoais.")
+    print("- Mantenha seu dispositivo atualizado e com antivírus ativo.\n")
+
+    input("Pressione Enter para voltar ao menu principal...")
 def sair():
     print("\nSaindo do sistema... Até logo!")
     exit()
