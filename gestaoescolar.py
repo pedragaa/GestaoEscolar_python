@@ -14,7 +14,9 @@ cursos = [
         "carga": "18 horas"
     }
 ]
-modulos = []  # <- Lista de módulos cadastrados
+modulos = []
+
+usuario_logado = None  # Variável para verificar se o usuário está autenticado
 
 def fazer_cadastro():
     print("\n---- Tela de Cadastro ----")
@@ -39,8 +41,33 @@ def fazer_login():
     for usuario in usuarios:
         if usuario["email"] == email and usuario["senha"] == senha:
             print(f"\nLogin realizado com sucesso! Bem-vindo(a), {usuario['nome']}!\n")
-            return
+            return usuario
     print("Usuário ou senha inválidos!\n")
+    return None
+
+def tela_inicial():
+    global usuario_logado
+    while True:
+        print("\n" + "=" * 80)
+        print("************* BEM-VINDO À PLATAFORMA DE EDUCAÇÃO INFANTIL SEGURA **************")
+        print("=" * 80)
+        print("1 - Fazer cadastro")
+        print("2 - Fazer login")
+        print("3 - Sair")
+        print("=" * 80)
+
+        opcao = input("Escolha uma opção: ")
+
+        if opcao == "1":
+            fazer_cadastro()
+        elif opcao == "2":
+            usuario_logado = fazer_login()
+            if usuario_logado:
+                break  # Sai da tela inicial e entra no menu principal
+        elif opcao == "3":
+            sair()
+        else:
+            print("Opção inválida! Tente novamente.\n")
 
 def cursos_disponiveis():
     if not cursos:
@@ -82,18 +109,40 @@ def cadastrar_cursos():
 
 def cadastrar_modulo():
     print("\n---- Cadastro de Módulo ----")
-    modulo = input("Digite o nome do módulo: ")
-    modulos.append(modulo)
-    print(f"Módulo '{modulo}' cadastrado com sucesso!\n")
+    nome = input("Digite o nome do módulo: ")
+    descricao = input("Digite a descrição do módulo: ")
+    carga = input("Digite a carga horária do módulo: ")
+    
+    modulos.append({
+        "nome": nome,
+        "descricao": descricao,
+        "carga": carga
+    })
+    print(f"Módulo '{nome}' cadastrado com sucesso!\n")
 
 def modulos_disponiveis():
     print("\n---- Módulos Cadastrados ----")
     if not modulos:
         print("Nenhum módulo cadastrado ainda.\n")
+        return
+
+    for idx, modulo in enumerate(modulos, start=1):
+        print(f"{idx} - {modulo['nome']}")
+    print("0 - Voltar ao menu principal")
+    
+    opcao = input("\nEscolha um módulo para ver mais informações: ")
+
+    if opcao == "0":
+        print("Voltando ao menu principal...\n")
+    elif opcao.isdigit() and 1 <= int(opcao) <= len(modulos):
+        modulo = modulos[int(opcao) - 1]
+        print(f"\n--- {modulo['nome']} ---")
+        print(f"Descrição: {modulo['descricao']}")
+        print(f"Carga horária: {modulo['carga']}\n")
+        input("Pressione Enter para voltar ao menu principal...")
     else:
-        for idx, modulo in enumerate(modulos, start=1):
-            print(f"{idx} - {modulo}")
-    input("\nPressione Enter para voltar ao menu principal...")
+        print("Opção inválida. Retornando ao menu principal...\n")
+        input("Pressione Enter para continuar...")
 
 def mais_informacoes():
     print("\n---- Mais Informações ----")
@@ -121,38 +170,35 @@ def sair():
     print("\nSaindo do sistema... Até logo!")
     exit()
 
+# Primeiro, exige cadastro e login
+tela_inicial()
+
 # Menu principal
 while True:
     print("\n" + "*" * 80)
     print("***************** PLATAFORMA DE EDUCAÇÃO INFANTIL SEGURA *************************")
     print("*" * 80)
-    print("1 - Fazer cadastro")
-    print("2 - Fazer login")
-    print("3 - Cadastrar cursos")
-    print("4 - Cadastrar módulo de cursos")
-    print("5 - Ver módulos cadastrados")
-    print("6 - Mais informações")
-    print("7 - Ver cursos disponíveis")
-    print("8 - Sair")
+    print("1 - Cadastrar cursos")
+    print("2 - Cadastrar módulo de cursos")
+    print("3 - Ver módulos cadastrados")
+    print("4 - Mais informações")
+    print("5 - Ver cursos disponíveis")
+    print("6 - Sair")
     print("*" * 80)
 
     escolha = input("Escolha uma opção: ")
 
     if escolha == "1":
-        fazer_cadastro()
-    elif escolha == "2":
-        fazer_login()
-    elif escolha == "3":
         cadastrar_cursos()
-    elif escolha == "4":
+    elif escolha == "2":
         cadastrar_modulo()
-    elif escolha == "5":
+    elif escolha == "3":
         modulos_disponiveis()
-    elif escolha == "6":
+    elif escolha == "4":
         mais_informacoes()
-    elif escolha == "7":
+    elif escolha == "5":
         cursos_disponiveis()
-    elif escolha == "8":
+    elif escolha == "6":
         sair()
     else:
         print("\nOpção inválida! Tente novamente.\n")
