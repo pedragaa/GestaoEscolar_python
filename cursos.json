@@ -1,0 +1,17 @@
+[
+    {
+        "nome": "Lei Geral de Proteção de Dados (LGPD)",
+        "descricao": "Aprenda os princípios da LGPD, direitos dos titulares de dados e como proteger informações pessoais.",
+        "carga": "20 horas"
+    },
+    {
+        "nome": "Cibersegurança",
+        "descricao": "Entenda como se proteger de ameaças digitais, como vírus, ataques hacker e boas práticas na internet.",
+        "carga": "18 horas"
+    },
+    {
+        "nome": "Matemática",
+        "descricao": "Introdução a funções quadráticas",
+        "carga": "24"
+    }
+]

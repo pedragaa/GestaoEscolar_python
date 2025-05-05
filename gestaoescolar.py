@@ -1,33 +1,59 @@
+import json
 import getpass
+import os
 
-# Listas de dados
-usuarios = []
-cursos = [
-    {
-        "nome": "Lei Geral de Proteção de Dados (LGPD)",
-        "descricao": "Aprenda os princípios da LGPD, direitos dos titulares de dados e como proteger informações pessoais.",
-        "carga": "20 horas"
-    },
-    {
-        "nome": "Cibersegurança",
-        "descricao": "Entenda como se proteger de ameaças digitais, como vírus, ataques hacker e boas práticas na internet.",
-        "carga": "18 horas"
-    }
-]
-modulos = []
+ARQUIVO_USUARIOS = "usuarios.json"
+ARQUIVO_CURSOS = "cursos.json"
+ARQUIVO_MODULOS = "modulos.json"
 
-usuario_logado = None  # Variável para verificar se o usuário está autenticado
+def carregar_dados(arquivo):
+    if os.path.exists(arquivo):
+        with open(arquivo, "r", encoding="utf-8") as f:
+            return json.load(f)
+    return []
+
+def salvar_dados(arquivo, dados):
+    with open(arquivo, "w", encoding="utf-8") as f:
+        json.dump(dados, f, ensure_ascii=False, indent=4)
+
+usuarios = carregar_dados(ARQUIVO_USUARIOS)
+cursos = carregar_dados(ARQUIVO_CURSOS)
+modulos = carregar_dados(ARQUIVO_MODULOS)
+
+if not cursos:
+    cursos = [
+        {
+            "nome": "Lei Geral de Proteção de Dados (LGPD)",
+            "descricao": "Aprenda os princípios da LGPD, direitos dos titulares de dados e como proteger informações pessoais.",
+            "carga": "20 horas"
+        },
+        {
+            "nome": "Cibersegurança",
+            "descricao": "Entenda como se proteger de ameaças digitais, como vírus, ataques hacker e boas práticas na internet.",
+            "carga": "18 horas"
+        }
+    ]
+    salvar_dados(ARQUIVO_CURSOS, cursos)
+
+usuario_logado = None
 
 def fazer_cadastro():
     print("\n---- Tela de Cadastro ----")
     nome = input("Digite seu nome: ")
     email = input("Digite seu email: ")
-    
+
+    for u in usuarios:
+        if u["email"] == email:
+            print("Já existe um usuário com esse e-mail.\n")
+            return
+
     while True:
         senha = getpass.getpass("Digite sua senha: ")
         confirmasenha = getpass.getpass("Confirme sua senha: ")
         if senha == confirmasenha:
-            usuarios.append({"nome": nome, "email": email, "senha": senha})
+            novo_usuario = {"nome": nome, "email": email, "senha": senha}
+            usuarios.append(novo_usuario)
+            salvar_dados(ARQUIVO_USUARIOS, usuarios)
             print(f"Cadastro realizado para {nome}!\n")
             break
         else:
@@ -37,7 +63,7 @@ def fazer_login():
     print("\n---- Tela de Login ----")
     email = input("Digite seu email: ")
     senha = getpass.getpass("Digite sua senha: ")
-    
+
     for usuario in usuarios:
         if usuario["email"] == email and usuario["senha"] == senha:
             print(f"\nLogin realizado com sucesso! Bem-vindo(a), {usuario['nome']}!\n")
@@ -63,7 +89,7 @@ def tela_inicial():
         elif opcao == "2":
             usuario_logado = fazer_login()
             if usuario_logado:
-                break  # Sai da tela inicial e entra no menu principal
+                break
         elif opcao == "3":
             sair()
         else:
@@ -98,13 +124,13 @@ def cadastrar_cursos():
     nome = input("Digite o nome do curso: ")
     descricao = input("Digite a descrição do curso: ")
     carga = input("Digite a carga horária do curso: ")
-    
+
     cursos.append({
         "nome": nome,
         "descricao": descricao,
         "carga": carga
     })
-
+    salvar_dados(ARQUIVO_CURSOS, cursos)
     print(f"Curso '{nome}' cadastrado com sucesso!\n")
 
 def cadastrar_modulo():
@@ -112,12 +138,13 @@ def cadastrar_modulo():
     nome = input("Digite o nome do módulo: ")
     descricao = input("Digite a descrição do módulo: ")
     carga = input("Digite a carga horária do módulo: ")
-    
+
     modulos.append({
         "nome": nome,
         "descricao": descricao,
         "carga": carga
     })
+    salvar_dados(ARQUIVO_MODULOS, modulos)
     print(f"Módulo '{nome}' cadastrado com sucesso!\n")
 
 def modulos_disponiveis():
@@ -129,7 +156,7 @@ def modulos_disponiveis():
     for idx, modulo in enumerate(modulos, start=1):
         print(f"{idx} - {modulo['nome']}")
     print("0 - Voltar ao menu principal")
-    
+
     opcao = input("\nEscolha um módulo para ver mais informações: ")
 
     if opcao == "0":
@@ -170,7 +197,6 @@ def sair():
     print("\nSaindo do sistema... Até logo!")
     exit()
 
-# Primeiro, exige cadastro e login
 tela_inicial()
 
 # Menu principal
