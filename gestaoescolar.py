@@ -1,6 +1,7 @@
 import json
 import getpass
 import os
+import re
 
 ARQUIVO_USUARIOS = "usuarios.json"
 ARQUIVO_CURSOS = "cursos.json"
@@ -37,6 +38,20 @@ if not cursos:
 
 usuario_logado = None
 
+def senha_segura(senha):
+    # Critérios de senha segura
+    if len(senha) < 8:
+        return False
+    if not re.search(r"[A-Z]", senha):
+        return False
+    if not re.search(r"[a-z]", senha):
+        return False
+    if not re.search(r"\d", senha):
+        return False
+    if not re.search(r"[!@#$%^&*(),.?\":{}|<>]", senha):
+        return False
+    return True
+
 def fazer_cadastro():
     print("\n---- Tela de Cadastro ----")
     nome = input("Digite seu nome: ")
@@ -49,6 +64,14 @@ def fazer_cadastro():
 
     while True:
         senha = getpass.getpass("Digite sua senha: ")
+        if not senha_segura(senha):
+            print("A senha deve conter:\n"
+                  "- Pelo menos 8 caracteres\n"
+                  "- Uma letra maiúscula\n"
+                  "- Um número\n"
+                  "- Um caractere especial (!@#$%^&* etc)\n")
+            continue
+
         confirmasenha = getpass.getpass("Confirme sua senha: ")
         if senha == confirmasenha:
             novo_usuario = {"nome": nome, "email": email, "senha": senha}
