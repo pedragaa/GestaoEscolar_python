@@ -1,0 +1,437 @@
+[
+  {
+    "curso": "Lei Geral de Proteção de Dados (LGPD)",
+    "perguntas": [
+      {
+        "pergunta": "O que significa LGPD?",
+        "respostas": [
+          "Lei Geral de Privacidade de Dados",
+          "Lei Geral de Propriedade Digital",
+          "Lei Geral de Proteção de Dados"
+        ],
+        "correta": "Lei Geral de Proteção de Dados"
+      },
+      {
+        "pergunta": "Qual o principal objetivo da LGPD?",
+        "respostas": [
+          "Regular o comércio eletrônico",
+          "Garantir a privacidade e proteção dos dados pessoais",
+          "Estabelecer normas para propriedade intelectual"
+        ],
+        "correta": "Garantir a privacidade e proteção dos dados pessoais"
+      },
+      {
+        "pergunta": "Quem é o órgão fiscalizador da LGPD no Brasil?",
+        "respostas": [
+          "INMETRO",
+          "ANPD",
+          "ANVISA"
+        ],
+        "correta": "ANPD"
+      },
+      {
+        "pergunta": "Dados pessoais sensíveis incluem:",
+        "respostas": [
+          "Profissão",
+          "Religião e opinião política",
+          "Nome e endereço"
+        ],
+        "correta": "Religião e opinião política"
+      },
+      {
+        "pergunta": "A LGPD exige consentimento para:",
+        "respostas": [
+          "Venda de produtos",
+          "Coleta e uso de dados pessoais",
+          "Publicação de notícias"
+        ],
+        "correta": "Coleta e uso de dados pessoais"
+      },
+      {
+        "pergunta": "Qual é o direito do titular dos dados segundo a LGPD?",
+        "respostas": [
+          "Excluir dados pessoais",
+          "Vender dados pessoais",
+          "Compartilhar dados com terceiros sem aviso"
+        ],
+        "correta": "Excluir dados pessoais"
+      },
+      {
+        "pergunta": "Qual é a penalidade para o descumprimento da LGPD?",
+        "respostas": [
+          "Multa e sanções administrativas",
+          "Aumento de impostos",
+          "Confisco de bens"
+        ],
+        "correta": "Multa e sanções administrativas"
+      },
+      {
+        "pergunta": "A LGPD se aplica a quais tipos de dados?",
+        "respostas": [
+          "Somente dados financeiros",
+          "Dados pessoais em qualquer meio",
+          "Apenas dados digitais"
+        ],
+        "correta": "Dados pessoais em qualquer meio"
+      },
+      {
+        "pergunta": "Quem deve garantir a segurança dos dados pessoais?",
+        "respostas": [
+          "O titular dos dados",
+          "O controlador e operador dos dados",
+          "A polícia federal"
+        ],
+        "correta": "O controlador e operador dos dados"
+      },
+      {
+        "pergunta": "O que é anonimização de dados na LGPD?",
+        "respostas": [
+          "Remover qualquer dado pessoal que identifique o titular",
+          "Compartilhar dados com outras empresas",
+          "Converter dados para texto"
+        ],
+        "correta": "Remover qualquer dado pessoal que identifique o titular"
+      }
+    ]
+  },
+  {
+    "curso": "Cibersegurança",
+    "perguntas": [
+      {
+        "pergunta": "O que é phishing?",
+        "respostas": [
+          "Ataque de negação de serviço",
+          "Software antivírus",
+          "Tentativa de obter dados pessoais por meio de fraude"
+        ],
+        "correta": "Tentativa de obter dados pessoais por meio de fraude"
+      },
+      {
+        "pergunta": "Qual é a melhor prática para criar senhas seguras?",
+        "respostas": [
+          "Usar datas de nascimento",
+          "Usar combinações de letras, números e símbolos",
+          "Usar a palavra 'senha'"
+        ],
+        "correta": "Usar combinações de letras, números e símbolos"
+      },
+      {
+        "pergunta": "O que significa firewall?",
+        "respostas": [
+          "Barreira de proteção para redes de computadores",
+          "Programa para limpar o disco",
+          "Tipo de malware"
+        ],
+        "correta": "Barreira de proteção para redes de computadores"
+      },
+      {
+        "pergunta": "Um software malicioso é chamado de:",
+        "respostas": [
+          "Firewall",
+          "Malware",
+          "Hardware"
+        ],
+        "correta": "Malware"
+      },
+      {
+        "pergunta": "Qual é o principal objetivo da cibersegurança?",
+        "respostas": [
+          "Desenvolver jogos online",
+          "Proteger sistemas e dados contra ataques",
+          "Aumentar a velocidade da internet"
+        ],
+        "correta": "Proteger sistemas e dados contra ataques"
+      },
+      {
+        "pergunta": "O que é ransomware?",
+        "respostas": [
+          "Um vírus que apaga arquivos",
+          "Um malware que sequestra dados para pedir resgate",
+          "Um firewall avançado"
+        ],
+        "correta": "Um malware que sequestra dados para pedir resgate"
+      },
+      {
+        "pergunta": "O que significa VPN?",
+        "respostas": [
+          "Virtual Private Network",
+          "Very Personal Network",
+          "Visual Public Network"
+        ],
+        "correta": "Virtual Private Network"
+      },
+      {
+        "pergunta": "Qual é uma forma comum de proteger dados em trânsito?",
+        "respostas": [
+          "Criptografia",
+          "Backup",
+          "Desfragmentação"
+        ],
+        "correta": "Criptografia"
+      },
+      {
+        "pergunta": "O que é um ataque DoS?",
+        "respostas": [
+          "Ataque de negação de serviço",
+          "Ataque de desfragmentação",
+          "Ataque de compartilhamento"
+        ],
+        "correta": "Ataque de negação de serviço"
+      },
+      {
+        "pergunta": "O que devemos evitar para não cair em golpes de engenharia social?",
+        "respostas": [
+          "Compartilhar senhas",
+          "Usar senhas fortes",
+          "Atualizar software"
+        ],
+        "correta": "Compartilhar senhas"
+      }
+    ]
+  },
+  {
+    "curso": "Matemática",
+    "perguntas": [
+      {
+        "pergunta": "Quanto é 2 + 2?",
+        "respostas": ["4", "3", "5"],
+        "correta": "4"
+      },
+      {
+        "pergunta": "Quanto é 5 x 3?",
+        "respostas": ["10", "15", "8"],
+        "correta": "15"
+      },
+      {
+        "pergunta": "Quanto é 9 - 4?",
+        "respostas": ["6", "5", "7"],
+        "correta": "5"
+      },
+      {
+        "pergunta": "Quanto é 12 / 4?",
+        "respostas": ["4", "3", "2"],
+        "correta": "3"
+      },
+      {
+        "pergunta": "Qual número vem depois do 7?",
+        "respostas": ["9", "8", "6"],
+        "correta": "8"
+      },
+      {
+        "pergunta": "Quanto é 10 + 5?",
+        "respostas": ["14", "13", "15"],
+        "correta": "15"
+      },
+      {
+        "pergunta": "Quanto é 6 x 2?",
+        "respostas": ["8", "12", "10"],
+        "correta": "12"
+      },
+      {
+        "pergunta": "Quanto é 20 - 10?",
+        "respostas": ["5", "10", "15"],
+        "correta": "10"
+      },
+      {
+        "pergunta": "Quanto é 8 + 1?",
+        "respostas": ["10", "8", "9"],
+        "correta": "9"
+      },
+      {
+        "pergunta": "Quanto é 16 / 2?",
+        "respostas": ["8", "6", "10"],
+        "correta": "8"
+      }
+    ]
+  },
+  {
+    "curso": "Educação Física",
+    "perguntas": [
+      {
+        "pergunta": "Qual é a frequência ideal de atividade física para adultos recomendada pela OMS?",
+        "respostas": [
+          "60 minutos por dia",
+          "150 minutos por semana",
+          "30 minutos por dia"
+        ],
+        "correta": "150 minutos por semana"
+      },
+      {
+        "pergunta": "Qual destes é um benefício da atividade física regular?",
+        "respostas": [
+          "Diminuição da memória",
+          "Melhora da saúde cardiovascular",
+          "Perda de audição"
+        ],
+        "correta": "Melhora da saúde cardiovascular"
+      },
+      {
+        "pergunta": "Qual desses esportes é considerado um esporte coletivo?",
+        "respostas": [
+          "Natação",
+          "Futebol",
+          "Tênis"
+        ],
+        "correta": "Futebol"
+      },
+      {
+        "pergunta": "O alongamento é importante para:",
+        "respostas": [
+          "Reduzir a visão",
+          "Melhorar a flexibilidade",
+          "Aumentar o peso corporal"
+        ],
+        "correta": "Melhorar a flexibilidade"
+      },
+      {
+        "pergunta": "Qual é o principal músculo trabalhado no agachamento?",
+        "respostas": [
+          "Trapézio",
+          "Quadríceps",
+          "Bíceps"
+        ],
+        "correta": "Quadríceps"
+      },
+      {
+        "pergunta": "O que significa IMC?",
+        "respostas": [
+          "Índice de Massa Corporal",
+          "Índice de Movimento Corporal",
+          "Índice de Massa Cerebral"
+        ],
+        "correta": "Índice de Massa Corporal"
+      },
+      {
+        "pergunta": "Qual atividade melhora a capacidade cardiovascular?",
+        "respostas": [
+          "Levantamento de peso",
+          "Corrida",
+          "Alongamento"
+        ],
+        "correta": "Corrida"
+      },
+      {
+        "pergunta": "Qual destas é uma atividade aeróbica?",
+        "respostas": [
+          "Natação",
+          "Musculação",
+          "Yoga"
+        ],
+        "correta": "Natação"
+      },
+      {
+        "pergunta": "Qual é o benefício do aquecimento antes do exercício?",
+        "respostas": [
+          "Diminuir a flexibilidade",
+          "Prevenir lesões",
+          "Causar fadiga"
+        ],
+        "correta": "Prevenir lesões"
+      },
+      {
+        "pergunta": "Qual destes não é um componente da aptidão física?",
+        "respostas": [
+          "Força muscular",
+          "Capacidade pulmonar",
+          "Memória"
+        ],
+        "correta": "Memória"
+      }
+    ]
+  },
+  {
+    "curso": "Hardware e Software",
+    "perguntas": [
+      {
+        "pergunta": "O que é hardware?",
+        "respostas": [
+          "Um programa de computador",
+          "O sistema operacional",
+          "A parte física do computador"
+        ],
+        "correta": "A parte física do computador"
+      },
+      {
+        "pergunta": "O que é software?",
+        "respostas": [
+          "Componentes físicos do computador",
+          "Programas e sistemas operacionais",
+          "Dispositivos de entrada"
+        ],
+        "correta": "Programas e sistemas operacionais"
+      },
+      {
+        "pergunta": "Qual destes é um exemplo de hardware?",
+        "respostas": [
+          "Teclado",
+          "Navegador de internet",
+          "Windows"
+        ],
+        "correta": "Teclado"
+      },
+      {
+        "pergunta": "Qual destes é um sistema operacional?",
+        "respostas": [
+          "Linux",
+          "Monitor",
+          "Processador"
+        ],
+        "correta": "Linux"
+      },
+      {
+        "pergunta": "Qual é a função da memória RAM?",
+        "respostas": [
+          "Controlar a entrada do teclado",
+          "Armazenar arquivos permanentemente",
+          "Armazenar temporariamente dados para acesso rápido"
+        ],
+        "correta": "Armazenar temporariamente dados para acesso rápido"
+      },
+      {
+        "pergunta": "Qual componente é responsável por processar dados?",
+        "respostas": [
+          "CPU",
+          "HD",
+          "Monitor"
+        ],
+        "correta": "CPU"
+      },
+      {
+        "pergunta": "O que é um SSD?",
+        "respostas": [
+          "Dispositivo de armazenamento rápido",
+          "Tipo de software",
+          "Programa de segurança"
+        ],
+        "correta": "Dispositivo de armazenamento rápido"
+      },
+      {
+        "pergunta": "Qual é a principal função do sistema operacional?",
+        "respostas": [
+          "Gerenciar hardware e software",
+          "Criar documentos",
+          "Proteger contra vírus"
+        ],
+        "correta": "Gerenciar hardware e software"
+      },
+      {
+        "pergunta": "O que é um driver?",
+        "respostas": [
+          "Programa que controla hardware",
+          "Dispositivo de entrada",
+          "Sistema operacional"
+        ],
+        "correta": "Programa que controla hardware"
+      },
+      {
+        "pergunta": "Qual destes não é hardware?",
+        "respostas": [
+          "Placa-mãe",
+          "Microsoft Word",
+          "Memória RAM"
+        ],
+        "correta": "Microsoft Word"
+      }
+    ]
+  }
+]

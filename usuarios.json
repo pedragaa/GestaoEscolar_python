@@ -13,5 +13,26 @@
         "nome": "testando",
         "email": "testando@gmail.com",
         "senha": "Pedrinho16#"
+    },
+    {
+        "nome": "ciberseguranca",
+        "email": "ciberseguranca@gmail.com",
+        "senha": "Ciber123#"
+    },
+    {
+        "nome": "testecurso",
+        "email": "teste@gmail.com",
+        "senha": "Pedrinho16#"
+    },
+    {
+        "nome": "Projeto Integrador",
+        "email": "projeto@gmail.com",
+        "senha": "Projeto123#"
+    },
+    {
+        "id": 7,
+        "nome": "paloma",
+        "email": "paloma@gmail.com",
+        "senha": "Paloma123#"
     }
 ]

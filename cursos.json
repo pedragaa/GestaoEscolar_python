@@ -13,5 +13,15 @@
         "nome": "Matemática",
         "descricao": "Introdução a funções quadráticas",
         "carga": "24"
+    },
+    {
+        "nome": "Educação Física",
+        "descricao": "Curso voltado para atividades práticas esportivas",
+        "carga": "200"
+    },
+    {
+        "nome": "Hardware e Software",
+        "descricao": "Curso com objetivo de esclarecer os alunos sobre a teoria de hardware e software",
+        "carga": "30"
     }
 ]

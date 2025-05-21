@@ -6,6 +6,8 @@ import re
 ARQUIVO_USUARIOS = "usuarios.json"
 ARQUIVO_CURSOS = "cursos.json"
 ARQUIVO_MODULOS = "modulos.json"
+ARQUIVO_QUESTIONARIOS = "questionarios.json"
+ARQUIVO_RESULTADOS = "resultados.json"
 
 def carregar_dados(arquivo):
     if os.path.exists(arquivo):
@@ -20,37 +22,17 @@ def salvar_dados(arquivo, dados):
 usuarios = carregar_dados(ARQUIVO_USUARIOS)
 cursos = carregar_dados(ARQUIVO_CURSOS)
 modulos = carregar_dados(ARQUIVO_MODULOS)
-
-if not cursos:
-    cursos = [
-        {
-            "nome": "Lei Geral de Proteção de Dados (LGPD)",
-            "descricao": "Aprenda os princípios da LGPD, direitos dos titulares de dados e como proteger informações pessoais.",
-            "carga": "20 horas"
-        },
-        {
-            "nome": "Cibersegurança",
-            "descricao": "Entenda como se proteger de ameaças digitais, como vírus, ataques hacker e boas práticas na internet.",
-            "carga": "18 horas"
-        }
-    ]
-    salvar_dados(ARQUIVO_CURSOS, cursos)
+questionarios = carregar_dados(ARQUIVO_QUESTIONARIOS)
+resultados = carregar_dados(ARQUIVO_RESULTADOS)
 
 usuario_logado = None
 
 def senha_segura(senha):
-    # Critérios de senha segura
-    if len(senha) < 8:
-        return False
-    if not re.search(r"[A-Z]", senha):
-        return False
-    if not re.search(r"[a-z]", senha):
-        return False
-    if not re.search(r"\d", senha):
-        return False
-    if not re.search(r"[!@#$%^&*(),.?\":{}|<>]", senha):
-        return False
-    return True
+    return (len(senha) >= 8 and
+            re.search(r"[A-Z]", senha) and
+            re.search(r"[a-z]", senha) and
+            re.search(r"\d", senha) and
+            re.search(r"[!@#$%^&*(),.?\":{}|<>]", senha))
 
 def fazer_cadastro():
     print("\n---- Tela de Cadastro ----")
@@ -118,6 +100,39 @@ def tela_inicial():
         else:
             print("Opção inválida! Tente novamente.\n")
 
+def realizar_questionario(curso_nome):
+    print(f"Iniciando o questionário do curso: {curso_nome}")
+
+    with open('questionarios.json', 'r', encoding='utf-8') as f:
+        questionarios = json.load(f)
+
+    perguntas = next((item["perguntas"] for item in questionarios if item["curso"] == curso_nome), None)
+
+    if perguntas is None:
+        print(f"Nenhum questionário encontrado para o curso '{curso_nome}'.")
+        return
+
+    total_perguntas = len(perguntas)
+    acertos = 0
+
+    for i, pergunta in enumerate(perguntas, 1):
+        print(f"\nPergunta {i}: {pergunta['pergunta']}")
+        for idx, opcao in enumerate(pergunta["respostas"], start=1):
+            print(f"  {chr(64 + idx)}. {opcao}")
+        resposta = input("Sua resposta (A, B, C): ").strip().upper()
+        index = ord(resposta) - 65
+        if 0 <= index < len(pergunta["respostas"]):
+            if pergunta["respostas"][index] == pergunta["correta"]:
+                print("✅ Correto!")
+                acertos += 1
+            else:
+                print(f"❌ Errado! Resposta correta: {pergunta['correta']}")
+        else:
+            print("❌ Resposta inválida.")
+
+    print(f"\nVocê acertou {acertos} de {total_perguntas} perguntas. ({(acertos / total_perguntas) * 100:.1f}%)")
+
+            
 def cursos_disponiveis():
     if not cursos:
         print("\nNenhum curso cadastrado no momento.\n")
@@ -137,6 +152,9 @@ def cursos_disponiveis():
         print(f"\n--- {curso['nome']} ---")
         print(f"Descrição: {curso['descricao']}")
         print(f"Carga horária: {curso['carga']}\n")
+        escolha = input("Deseja realizar o questionário deste curso? (s/n): ").lower()
+        if escolha == "s":
+            realizar_questionario(curso['nome'])
         input("Pressione Enter para voltar ao menu principal...")
     else:
         print("Opção inválida. Retornando ao menu principal...\n")
@@ -220,9 +238,10 @@ def sair():
     print("\nSaindo do sistema... Até logo!")
     exit()
 
+# Função cadastrar_questionario removida
+
 tela_inicial()
 
-# Menu principal
 while True:
     print("\n" + "*" * 80)
     print("***************** PLATAFORMA DE EDUCAÇÃO INFANTIL SEGURA *************************")
@@ -233,6 +252,7 @@ while True:
     print("4 - Mais informações")
     print("5 - Ver cursos disponíveis")
     print("6 - Sair")
+    # Opção 7 removida do menu
     print("*" * 80)
 
     escolha = input("Escolha uma opção: ")
@@ -250,4 +270,4 @@ while True:
     elif escolha == "6":
         sair()
     else:
-        print("\nOpção inválida! Tente novamente.\n")
+        print("Opção inválida. Tente novamente.")
