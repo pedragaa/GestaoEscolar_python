@@ -1,83 +1,89 @@
-📚 Plataforma de Educação Infantil Segura — Sistema Explicativo Completo
-Este sistema foi desenvolvido com o objetivo de oferecer uma plataforma de educação voltada ao público infantil, com foco em segurança digital, privacidade e aprendizado de boas práticas online. A aplicação é feita em Python puro, com uma interface baseada em linha de comando, organizada e simples de usar.
+📚 Plataforma de Educação Infantil Segura
+Descrição Geral
+Esta plataforma foi desenvolvida para oferecer um ambiente educativo seguro, voltado para crianças e jovens, com ênfase em segurança digital, privacidade e aprendizado de boas práticas online. Construída em Python puro, ela possui uma interface simples baseada em linha de comando, facilitando o uso e a navegação.
 
 🎯 Objetivos da Plataforma
-Promover o ensino seguro para crianças e jovens.
+Promover o ensino seguro e responsável para crianças e jovens.
 
-Oferecer cursos educativos sobre temas como LGPD e Cibersegurança.
+Disponibilizar cursos educativos sobre temas essenciais, como LGPD e Cibersegurança.
 
-Fornecer módulos didáticos com explicações detalhadas de cada tema.
+Dividir o conteúdo em módulos didáticos para melhor compreensão.
 
-Criar um ambiente seguro e com acesso controlado por cadastro e login.
+Garantir um ambiente seguro com acesso controlado via cadastro e login.
+
+Ser modular e expansível, permitindo a inclusão de novos cursos, módulos e usuários.
 
 🔐 1. Sistema de Cadastro e Login
-O sistema permite que novos usuários se cadastrem com:
+Cadastro de usuários: o sistema permite criar novos perfis com:
 
 Nome
 
 Email
 
-Senha (com confirmação segura via getpass)
+Senha (entrada protegida e confirmação via getpass)
 
-Depois do cadastro, é possível fazer o login usando o email e senha cadastrados. O sistema verifica as credenciais e confirma se são válidas antes de permitir o acesso.
+Login: validação do email e senha para garantir acesso seguro.
+
+Permite múltiplos usuários, sem limite.
 
 📘 2. Cursos Disponíveis
-Logo ao acessar a opção de cursos, o usuário pode visualizar:
+Exibição da lista de cursos cadastrados com seus títulos.
 
-Uma lista de cursos disponíveis com títulos e temas relevantes.
+Ao selecionar um curso, o usuário vê:
 
-Ao selecionar um curso, são exibidas informações como:
+Descrição detalhada
 
-Descrição do conteúdo
+Carga horária aproximada
 
-Carga horária
+Objetivo educacional
 
-Finalidade educacional
+Cursos padrão disponíveis:
 
-Os cursos vêm pré-carregados com duas opções:
+Lei Geral de Proteção de Dados (LGPD): conceitos sobre privacidade, proteção de dados e direitos digitais.
 
-Lei Geral de Proteção de Dados (LGPD): ensina sobre proteção de dados, privacidade e direitos online.
+Cibersegurança: noções sobre ameaças online e navegação segura para crianças.
 
-Cibersegurança: aborda ameaças digitais e como crianças podem navegar com segurança na internet.
-
-Além disso, o usuário pode cadastrar novos cursos personalizados, expandindo a grade curricular da plataforma.
+Possibilidade de adicionar cursos personalizados pelo usuário para ampliar o conteúdo.
 
 🧩 3. Módulos Educacionais
-Cada curso pode ter módulos temáticos, com descrições complementares. O sistema oferece:
+Cada curso é dividido em módulos temáticos para facilitar o aprendizado.
 
-Visualização de módulos disponíveis
+Funcionalidades disponíveis:
 
-Cadastro de novos módulos com nome e descrição
+Listar módulos existentes do curso.
+
+Cadastrar novos módulos com nome e descrição.
 
 Exemplos de módulos padrão:
 
-Módulo 1 - Introdução à Segurança Online
+Módulo 1: Introdução à Segurança Online
 
-Módulo 2 - Privacidade de Dados
+Módulo 2: Privacidade de Dados
 
-Esses módulos têm o objetivo de dividir o aprendizado em partes menores, facilitando a compreensão por parte das crianças.
+ℹ️ 4. Informações da Plataforma
+Mensagem de missão reforçando o compromisso:
 
-ℹ️ 4. Mais Informações
-A plataforma também possui uma seção explicativa sobre sua missão:
+“Esta plataforma foi criada para promover a educação infantil segura, priorizando o bem-estar digital e o ensino consciente desde a infância.”
 
-“Essa plataforma foi criada para a educação infantil segura.”
-Reforçando o compromisso com o bem-estar digital e o ensino consciente desde a infância.
+🚪 5. Navegação e Encerramento
+Navegação via menus numéricos claros e intuitivos.
 
-🚪 5. Encerramento e Navegação
-O sistema é interativo por menus, com opções claras e numeradas, oferecendo:
+Boas práticas para facilitar o uso, mesmo para públicos jovens.
 
-- Facilidade de uso
-
-- Boas práticas de navegação
-
-- Opção de sair do sistema com segurança
+Opção segura para sair do sistema a qualquer momento.
 
 🔄 Estrutura Modular e Expansível
-A aplicação é modular e permite expansão:
+Sistema modular que permite:
 
-Novos cursos e módulos podem ser adicionados facilmente.
+Inclusão de novos cursos e módulos facilmente.
 
-Usuários podem ser cadastrados sem limite.
+Cadastro ilimitado de usuários.
 
-Funciona de forma autônoma, sem necessidade de banco de dados externo (por enquanto em memória).
+Atualmente funciona em memória (sem banco de dados externo), garantindo simplicidade e autonomia.
 
+Preparado para futuras integrações e melhorias.
+
+Tecnologias Utilizadas
+Python 3.x (puro, sem frameworks)
+
+Biblioteca padrão getpass para segurança da senha
