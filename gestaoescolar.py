@@ -132,7 +132,6 @@ def realizar_questionario(curso_nome):
 
     print(f"\nVocê acertou {acertos} de {total_perguntas} perguntas. ({(acertos / total_perguntas) * 100:.1f}%)")
 
-            
 def cursos_disponiveis():
     if not cursos:
         print("\nNenhum curso cadastrado no momento.\n")
@@ -151,7 +150,15 @@ def cursos_disponiveis():
         curso = cursos[int(opcao) - 1]
         print(f"\n--- {curso['nome']} ---")
         print(f"Descrição: {curso['descricao']}")
-        print(f"Carga horária: {curso['carga']}\n")
+        print(f"Carga horária: {curso['carga']}")
+        
+        # Mostrar módulos atrelados ao curso
+        modulos_vinculados = [m['nome'] for m in modulos if curso['nome'] in m.get('cursos', [])]
+        if modulos_vinculados:
+            print("Módulos vinculados: " + ", ".join(modulos_vinculados))
+        else:
+            print("Nenhum módulo vinculado.")
+
         escolha = input("Deseja realizar o questionário deste curso? (s/n): ").lower()
         if escolha == "s":
             realizar_questionario(curso['nome'])
@@ -180,10 +187,15 @@ def cadastrar_modulo():
     descricao = input("Digite a descrição do módulo: ")
     carga = input("Digite a carga horária do módulo: ")
 
+    print("Digite os nomes dos cursos atrelados a este módulo (separados por vírgula):")
+    cursos_input = input().split(",")
+    cursos_vinculados = [c.strip() for c in cursos_input if c.strip()]
+
     modulos.append({
         "nome": nome,
         "descricao": descricao,
-        "carga": carga
+        "carga": carga,
+        "cursos": cursos_vinculados
     })
     salvar_dados(ARQUIVO_MODULOS, modulos)
     print(f"Módulo '{nome}' cadastrado com sucesso!\n")
@@ -206,7 +218,12 @@ def modulos_disponiveis():
         modulo = modulos[int(opcao) - 1]
         print(f"\n--- {modulo['nome']} ---")
         print(f"Descrição: {modulo['descricao']}")
-        print(f"Carga horária: {modulo['carga']}\n")
+        print(f"Carga horária: {modulo['carga']}")
+        cursos_vinculados = modulo.get("cursos", [])
+        if cursos_vinculados:
+            print("Cursos vinculados: " + ", ".join(cursos_vinculados))
+        else:
+            print("Nenhum curso vinculado.")
         input("Pressione Enter para voltar ao menu principal...")
     else:
         print("Opção inválida. Retornando ao menu principal...\n")
@@ -216,7 +233,6 @@ def mais_informacoes():
     print("\n---- Mais Informações ----")
     print("Essa plataforma foi criada para a educação infantil segura.\n")
 
-    print("---- Informações de Segurança ----")
     print("🔒 Segurança de Dados:")
     print("- Seus dados pessoais são armazenados com segurança e utilizados apenas para fins educacionais.")
     print("- Evite compartilhar sua senha com outras pessoas.\n")
@@ -238,8 +254,7 @@ def sair():
     print("\nSaindo do sistema... Até logo!")
     exit()
 
-# Função cadastrar_questionario removida
-
+# Iniciar aplicação
 tela_inicial()
 
 while True:
@@ -252,22 +267,20 @@ while True:
     print("4 - Mais informações")
     print("5 - Ver cursos disponíveis")
     print("6 - Sair")
-    # Opção 7 removida do menu
-    print("*" * 80)
 
-    escolha = input("Escolha uma opção: ")
+    opcao = input("Escolha uma opção: ")
 
-    if escolha == "1":
+    if opcao == "1":
         cadastrar_cursos()
-    elif escolha == "2":
+    elif opcao == "2":
         cadastrar_modulo()
-    elif escolha == "3":
+    elif opcao == "3":
         modulos_disponiveis()
-    elif escolha == "4":
+    elif opcao == "4":
         mais_informacoes()
-    elif escolha == "5":
+    elif opcao == "5":
         cursos_disponiveis()
-    elif escolha == "6":
+    elif opcao == "6":
         sair()
     else:
-        print("Opção inválida. Tente novamente.")
+        print("Opção inválida. Tente novamente.\n")

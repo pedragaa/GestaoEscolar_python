@@ -25,14 +25,14 @@
         "senha": "Pedrinho16#"
     },
     {
-        "nome": "Projeto Integrador",
-        "email": "projeto@gmail.com",
-        "senha": "Projeto123#"
-    },
-    {
         "id": 7,
         "nome": "paloma",
         "email": "paloma@gmail.com",
         "senha": "Paloma123#"
+    },
+    {
+        "nome": "Pedraga Lopes",
+        "email": "pedraga@gmail.com",
+        "senha": "Pedraga123#"
     }
 ]

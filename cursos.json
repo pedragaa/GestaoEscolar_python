@@ -23,5 +23,25 @@
         "nome": "Hardware e Software",
         "descricao": "Curso com objetivo de esclarecer os alunos sobre a teoria de hardware e software",
         "carga": "30"
+    },
+    {
+        "nome": "Física",
+        "descricao": "Curso para ensinar alunos sobre a matéria de física",
+        "carga": "30"
+    },
+    {
+        "nome": "Redes",
+        "descricao": "Curso introdutório a redes de computadores",
+        "carga": "60"
+    },
+    {
+        "nome": "Eletroeletrônica",
+        "descricao": "Curso introdutório a eletrônica",
+        "carga": "40"
+    },
+    {
+        "nome": "Análise e desenvolvimento de sistemas",
+        "descricao": "Curso voltado a programação e teoria",
+        "carga": "55"
     }
 ]

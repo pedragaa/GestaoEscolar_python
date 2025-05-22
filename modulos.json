@@ -2,6 +2,35 @@
     {
         "nome": "Marketing",
         "descricao": "Pacote de marketing para iniciantes",
-        "carga": "300"
+        "carga": "300",
+        "cursos": [
+            "Lei Geral de Proteção de Dados (LGPD)"
+        ]
+    },
+    {
+        "nome": "Ciências da Natureza",
+        "descricao": "Módulo que irá englobar todas as matérias referentes a ciências",
+        "carga": "100",
+        "cursos": [
+            "Matemática",
+            "Física",
+            "Educação Física"
+        ]
+    },
+    {
+        "nome": "Infraestrutura",
+        "descricao": "Módulo para abranger todas as infraestruturas possíveis",
+        "carga": "200",
+        "cursos": [
+            "Eletroeletrônica"
+        ]
+    },
+    {
+        "nome": "Tecnologia e informação",
+        "descricao": "Módulo voltado a tecnologia em geral",
+        "carga": "255",
+        "cursos": [
+            "Análise e desenvolvimento de sistemas"
+        ]
     }
 ]
